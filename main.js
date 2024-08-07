@@ -1,3 +1,41 @@
+//active NavBar
+document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Function to remove 'active' class from all nav links
+    function removeActiveClasses() {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+    }
+
+    // Add 'click' event listeners to nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            removeActiveClasses();
+            this.classList.add('active');
+        });
+    });
+
+    //Scroll control
+    window.addEventListener('scroll', function () {
+        let fromTop = window.scrollY;
+
+        navLinks.forEach(link => {
+            let section = document.querySelector(link.hash);
+
+            if (
+                section.offsetTop <= fromTop &&
+                section.offsetTop + section.offsetHeight > fromTop
+            ) {
+                removeActiveClasses();
+                link.classList.add('active');
+            }
+        });
+    });
+});
+
+
 // toggle icon navbar
 
 let menuIcon = document.querySelector('#menu-icon');
@@ -20,7 +58,7 @@ window.onscroll = () => {
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-        if(top >= offset && top < offset + height) {
+        if (top >= offset && top < offset + height) {
             navLinks.forEach.apply(links => {
                 links.classList.remove('active');
                 document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
@@ -59,11 +97,11 @@ const typed = new Typed('.multiple-text', {
 });
 
 // Mail
-(function() {
+(function () {
     emailjs.init('YOUR_USER_ID');
 })();
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
     // Generate a unique contact number
