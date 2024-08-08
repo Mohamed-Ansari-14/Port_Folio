@@ -146,18 +146,15 @@
        <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
 
-        <form action="#" id="contact-form">
+        <form action="https://formspree.io/f/mldrngre" method="POST" id="contact">
             <div class="input-box">
-                <input type="text" id="full-name" placeholder="Full Name">
-                <input type="email" id="email-address" placeholder="Email Address">
+                <input type="text" name="Full Name" id="full-name" placeholder="Full Name" required>
+                <input type="email" name="Email" id="email-address" placeholder="Email Address" required>
+                <input type="number" name="Mobile Number" id="mobile-number" placeholder="Mobile Number">
+                <input type="text" name="Subject" id="email-subject" placeholder="Email Subject">
             </div>
-
-            <div class="input-box">
-                <input type="number" id="mobile-number" placeholder="Mobile Number">
-                <input type="text" id="email-subject" placeholder="Email Subject">
-            </div>
-            <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn">
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn">Send Message</button>
         </form>
        </section>
 

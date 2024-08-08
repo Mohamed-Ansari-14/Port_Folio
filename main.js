@@ -17,22 +17,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    //Scroll control
-    window.addEventListener('scroll', function () {
-        let fromTop = window.scrollY;
+    // //Scroll control
+    // window.addEventListener('scroll', function () {
+    //     let fromTop = window.scrollY;
 
-        navLinks.forEach(link => {
-            let section = document.querySelector(link.hash);
+    //     navLinks.forEach(link => {
+    //         let section = document.querySelector(link.hash);
 
-            if (
-                section.offsetTop <= fromTop &&
-                section.offsetTop + section.offsetHeight > fromTop
-            ) {
-                removeActiveClasses();
-                link.classList.add('active');
-            }
-        });
-    });
+    //         if (
+    //             section.offsetTop <= fromTop &&
+    //             section.offsetTop + section.offsetHeight > fromTop
+    //         ) {
+    //             removeActiveClasses();
+    //             link.classList.add('active');
+    //         }
+    //     });
+    // });
 });
 
 
