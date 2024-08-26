@@ -83,38 +83,15 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .skills-container, .portfolio-box, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-img, .skills-container, .project-box, .contact form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-contact h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-contact p, .about-content', { origin: 'right' });
 
 //typed.js
 const typed = new Typed('.multiple-text', {
-    strings: ['Full Stack Developer', 'Java Developer', 'Angular Developer'],
+    strings: ['Java Developer', 'SQL Developer', 'Web Developer'],
     typeSpeed: 70,
     backSpeed: 70,
     backDelay: 1000,
     loop: true,
-});
-
-// Mail
-(function () {
-    emailjs.init('YOUR_USER_ID');
-})();
-
-document.getElementById('contact-form').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    // Generate a unique contact number
-    this.contact_number.value = Math.random() * 100000 | 0;
-
-    const serviceID = 'YOUR_SERVICE_ID';
-    const templateID = 'YOUR_TEMPLATE_ID';
-
-    emailjs.sendForm(serviceID, templateID, this)
-        .then(() => {
-            alert('Message sent successfully!');
-        }, (err) => {
-            alert('Failed to send the message, please try again.');
-            console.log(JSON.stringify(err));
-        });
 });
